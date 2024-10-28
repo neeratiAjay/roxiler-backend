@@ -4,7 +4,6 @@ const sqlite3 = require("sqlite3")
 const path = require("path")
 const cors = require("cors")
 const app = express()
-const cors = require("cors")
 
 
 const corsOptions = {

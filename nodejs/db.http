@@ -1,0 +1,10 @@
+GET  http://localhost:4000/transactions
+###
+GET http://localhost:4000/statistics?month=12
+###
+GET http://localhost:4000/barchart/12
+
+###
+GET http://localhost:4000/piechart/12
+###
+GET http://localhost:4000/combine/12

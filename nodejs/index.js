@@ -4,6 +4,22 @@ const sqlite3 = require("sqlite3")
 const path = require("path")
 const cors = require("cors")
 const app = express()
+const cors = require("cors")
+
+
+const corsOptions = {
+  origin: 'http://localhost:3000', // allow requests only from localhost:3000
+  methods: ['GET', 'POST', 'PUT', 'DELETE'], // specify allowed HTTP methods
+  credentials: true, // allow cookies to be sent with requests
+};
+
+app.use(cors({
+    origin: 'http://localhost:3000', // Allow only this origin
+    methods: ['GET', 'POST', 'PUT', 'DELETE'], // Specify allowed HTTP methods if needed
+    credentials: true, // Enable credentials if required (e.g., cookies, headers)
+}));
+
+app.use(cors(corsOptions))
 
 
 const corsOptions = {

@@ -2,7 +2,18 @@ const express = require("express")
 const {open} = require("sqlite")
 const sqlite3 = require("sqlite3")
 const path = require("path")
+const cors = require("cors")
 const app = express()
+
+
+const corsOptions = {
+  origin: ['http://localhost:3000', 'https://roxilerfullstack.onrender.com'], // Add your production URL here
+  methods: ['GET', 'POST', 'PUT', 'DELETE'], // Define the allowed methods if necessary
+  credentials: true, // Include credentials if necessary
+};
+
+app.use(cors(corsOptions));
+
 
 const dbPath = path.join(__dirname,"./products.db")
 let db = null 
@@ -13,7 +24,7 @@ db = await open({
     driver:sqlite3.Database
 })
 app.listen(4000,()=>{
-    console.log("Server is Running At http://localhost:40000")
+    console.log("Server is Running At http://localhost:4000")
 })
     }catch(e){
         console.log(`DBError ${e.message}`)

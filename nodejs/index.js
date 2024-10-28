@@ -6,7 +6,11 @@ const app = express()
 const cors = require("cors")
 
 
-
+const corsOptions = {
+  origin: 'http://localhost:3000', // allow requests only from localhost:3000
+  methods: ['GET', 'POST', 'PUT', 'DELETE'], // specify allowed HTTP methods
+  credentials: true, // allow cookies to be sent with requests
+};
 
 app.use(cors({
     origin: 'http://localhost:3000', // Allow only this origin

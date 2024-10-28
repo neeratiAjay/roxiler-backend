@@ -4,6 +4,16 @@ const sqlite3 = require("sqlite3")
 const path = require("path")
 const app = express()
 
+app.use(cors())
+
+
+const corsOptions = {
+  origin: 'http://localhost:3000', // Update this to the correct origin
+  optionsSuccessStatus: 200
+};
+
+app.use(cors(corsOptions))
+
 const dbPath = path.join(__dirname,"./products.db")
 let db = null 
 const initializeDBAndServer = async()=>{
